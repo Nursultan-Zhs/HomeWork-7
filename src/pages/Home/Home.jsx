@@ -11,8 +11,8 @@ const Home = () => {
                     return <CategoryComponent key={item} limit={4} category={item} />
                 })
             }
+<div class="loader"></div> 
 
-<div class="loader" ></div> 
         </div>
     );
 }

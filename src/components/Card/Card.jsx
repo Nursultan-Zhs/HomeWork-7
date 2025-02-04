@@ -2,37 +2,19 @@ import './card.scss';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addCart } from '../../redux/reducer';
-import { useState } from "react";
+
 
 const Card = ({item}) => {
-    const dispatch = useDispatch();
-    const [cartCount, setCartCount] = useState(0)
-    
-    const addToCart = () => {
-        setCartCount((prev) => {
-         if(typeof prev === "string")
-           return "9+"
-        return  prev >=  9 ? "9+" : prev + 1 
 
-        })
-    }
+    const dispatch = useDispatch();
+
 
     return (
         
         <div className="card">
-                      <button className="card-btn" onClick={() =>{
-                        addToCart()
-                    dispatch(addCart(item)); 
-                }}>buy</button>
-              <div>
-                {
-                    cartCount !== 0 && (
-                        <div className="card-indicator">
-                             {cartCount}
-                        </div>
-                    )
-                }
-              </div>
+
+     
+
             <Link to={`/product/${item.id}`}>
             <img src={item.image} alt="" className="card-img" />
                                                                      
@@ -52,6 +34,9 @@ const Card = ({item}) => {
             <div className="card-block">
                 <p className="card-text">${item.price}</p>
       
+                <button className="card-btn" onClick={() =>{
+                          dispatch(addCart(item)); 
+                }}>buy</button>
             </div>
         </div>
     );

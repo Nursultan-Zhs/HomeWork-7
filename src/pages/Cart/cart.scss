@@ -4,12 +4,20 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        border-radius: 10px;
         padding: 20px 0;
         border-bottom: 1px solid;
+        background: linear-gradient(to right, black 70%, rgb(244, 248, 4) 50%);
         &-left{
             display: flex;
             align-items: center;
             column-gap: 10px ;
+        }
+        .cart-item-title{
+           color: white;
+        }
+        .price{
+            color: rgb(14, 13, 13);
         }
         &-img{
             width: 200px;
@@ -28,6 +36,7 @@
             border-radius: 5px ;
             border: 1px solid black;
             color: wheat;
+            cursor: pointer;
         }
         .plus{
             width: 25px;
@@ -35,11 +44,22 @@
             background-color: #2ffd06;
             border-radius: 5px ;
             border: 1px solid black;
+            cursor: pointer;
         }
         .del{
-            background-color: #0000;
+            background-color: #fffdfd;
             height: 25px;
             border-radius: 5px;
+            cursor: pointer;
         }
+   
+    }
+    .btn{
+        background-color: #e7e4e4f5;
+        margin-left: 1200px;
+        height: 30px;
+        border-radius: 8px;
+        border: 1px solid black;
+        cursor: pointer;
     }
 }

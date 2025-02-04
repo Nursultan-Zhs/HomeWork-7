@@ -5,12 +5,16 @@ import './header.scss';
 
 const Header = () => {
     const categories = useSelector(s => s.reducer.categories);
+
+    const totalItems = useSelector(state =>
+        state.reducer.cart.reduce((total, item) => total + item.count, 0 )
+    );
    
 
     return (
       
         <header className="header">
-             
+             <h3 className="item">{totalItems}</h3>
                 <div className="container header-container">
                         <h1 className="header-logo"><Link to={'/'}>shop</Link></h1>
 

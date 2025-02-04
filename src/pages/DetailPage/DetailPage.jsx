@@ -4,12 +4,14 @@ import axios from "axios";
 import './detail.scss'
 import { addCart } from "../../redux/reducer";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
  
+
 const DetailPage = () => {
     const params = useParams();
     const [data, setData] = useState({});
     const dispatch = useDispatch();
-
+    const navigate = useNavigate()
 
     useEffect(()=>{
         axios(`https://fakestoreapi.com/products/${params.id}`)
@@ -17,6 +19,9 @@ const DetailPage = () => {
     },[params])
     return (
         <div className="detail">
+                <button className="btn"  onClick={() =>{
+            navigate(-1)
+          }} >GO HOME</button>
             <div className="row">
                 <div className="col-6">
                     <img className="detail-img" src={data.image} alt="" />
